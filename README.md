@@ -1,4 +1,4 @@
-# Teste desenvolvido para a vaga de front-end Junior do Instituto Atlantico.
+# Teste busca, rotas, axios, empty state, loading
 
 ## Como instalar
 
