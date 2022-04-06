@@ -3,7 +3,8 @@ import { GlobalStyle } from './styles/global'
 import { useEffect, useState } from 'react'
 import { SideBar } from './components/SideBar/SideBar'
 import { Content } from './components/Content/Content'
-import { api } from './services/api'
+// import { api } from './services/api'
+import { movies as moviesData } from './data/data'
 import {
   BrowserRouter as Router,
   Outlet,
@@ -61,14 +62,19 @@ const empty = [
 ]
 
 function App() {
-  const [movies, setMovies] = useState(empty)
+  const [movies, setMovies] = useState([])
 
   // on mount pegar dados da api
+  // useEffect(() => {
+  //   api.get('movies').then(response => {
+  //     setMovies([])
+  //     setMovies(response.data)
+  //   })
+  // }, [])
+
   useEffect(() => {
-    api.get('movies').then(response => {
-      setMovies([])
-      setMovies(response.data)
-    })
+    setMovies([])
+    setMovies(moviesData)
   }, [])
 
   function handleAdicionarFavoritos(filme) {
